@@ -1,0 +1,7 @@
+{
+		"id"  : "git_settings",
+		"git_url": "https://codeload.github.com/neoandrey/nodejs-kayxlavcomms/zip/master",
+		"git_user": "neoandrey@yahoo.com",
+		"remote_file":  "C:\\tmp\\nodejs-kayxlavcomms-master.zip",
+		"remote_folder" :"C:\\tmp\\nodejs\\kayxlavcomms"
+}

@@ -1,0 +1,21 @@
+# .bashrc
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
+
+# User specific aliases and functions
+
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+alias ls='ls -ltrap'
+alias lss='ls -ltap'
+alias netstat='netstat -pluton'
+alias service='systemctl'
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+        . /etc/bashrc
+fi
+export http_proxy =<%= @proxy_url %>
+export https_proxy=<%= @proxy_url %>
+export ftp_proxy  =<%= @proxy_url %>
+export no_proxy   =127.0.0.1,localhost,0.0.0.0

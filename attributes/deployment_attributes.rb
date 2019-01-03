@@ -31,7 +31,7 @@ end
  default[:repo_expansion_folder]="/opt/nodejs/"
  default[:site_folder]= "/opt/nodejs/kayxlavcomms/"
  default[:config_file_location]= "/opt/nodejs/kayxlavcomms/config/settings.json"
- default[:server_host_name]= "0.0.0.0"
+ default[:server_host_name]= "127.0.0.1"
  default[:server_port_number]= 9000
  default[:reload_port]=9001
  default[:site_title]= "KayXLavcomms"
@@ -40,7 +40,7 @@ end
  default[:mongo_port_number]= 27017
  default[:refresh_structure]=true
  default[:mongo_collection_name]="kayxlavcomms"
- default[:start_command]="cd #{default[:site_folder]} \n rm -rf package-lock.json   \n npm install \n  pgrep  #{default[:app_process_name]} | sudo xargs -n1 kill  \n bash start_kayxlav.sh"
+ default[:start_command]="cd #{default[:site_folder]} \n rm -rf package-lock.json   \n npm install \n  pgrep  #{default[:app_process_name]} | sudo xargs -n1 kill  \n pm2 start app.js &"
  default[:start_app_only]=false
  default[:force_deploy]=true
  default[:should_use_proxy]=false

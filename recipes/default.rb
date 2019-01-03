@@ -95,7 +95,7 @@ if node[:start_app_only]
 			  notifies :run, "execute[install_node]", :immediately
 		end
 		execute 'install_node' do
-				command "sudo yum remove nodejs.x86_64 -y && curl -sL https://rpm.nodesource.com/setup_10.x | sudo bash - && sudo yum install nodejs -y && cd #{node[:site_folder]} && npm install -g nodemon"
+				command "sudo yum remove nodejs.x86_64 -y && curl -sL https://rpm.nodesource.com/setup_10.x | sudo bash - && sudo yum install nodejs -y && cd #{node[:site_folder]} && npm install -g nodemon && npm install pm2@latest -g"
 				action :nothing
 			end
 	
@@ -232,7 +232,7 @@ if  node['platform'] == 'windows'
 				command = "pgrep #{node[:app_process_name]}"
 				command_out = shell_out(command)
 				is_node_running =  command_out.stdout.nil? ||  command_out.stdout.empty?
-				puts "is_node_running: #{is_node_running}"
+				
 		end	
 		  action:run
 	end
